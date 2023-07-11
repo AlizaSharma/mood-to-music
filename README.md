@@ -6,7 +6,7 @@ This app will run in the browser and feature dynamically updated HTML powered by
 
 ## Table of Contents 
 * [Usage](#usage)
-* [User Story](#userstory)
+* [User Story](#user-story)
 * [Questions](#questions)
 
 ## Usage 
