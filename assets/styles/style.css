@@ -21,3 +21,9 @@
     margin: 10px;
     align-self: center;
   }
+
+  .button {
+    text-align: center;
+    justify-content: center;
+    background-color: whitesmoke;
+}
