@@ -2,3 +2,10 @@
     padding-top: 2rem;
 
 }
+.card {
+    display: inline-block;
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+}
