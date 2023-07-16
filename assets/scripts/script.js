@@ -1,16 +1,34 @@
-var category = 'happiness'
-$.ajax({
-    method: 'GET',
-    url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
-    headers: { 'X-Api-Key': 'zanloHQp53FvGJffeRPwng==0BaPHaRW4myCo1F3'},
-    contentType: 'application/json',
-    success: function(result) {
-        console.log(result);
-    },
-    error: function ajaxError(jqXHR) {
-        console.error('Error: ', jqXHR.responseText);
-    }
-});
+$(function quotes() {
+    var category = 'happiness'
+    var category2 = 'anger'
+    $.ajax({
+        method: 'GET',
+        url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
+        headers: { 'X-Api-Key': 'zanloHQp53FvGJffeRPwng==0BaPHaRW4myCo1F3'},
+        contentType: 'application/json',
+        success: function(result) {
+            console.log(result[0].quote);
+            $('#quote').text(result[0].quote + '  - ' + result[0].author);
+        },
+        error: function ajaxError(jqXHR) {
+            console.error('Error: ', jqXHR.responseText);
+        }
+    });
+    
+    $.ajax({
+        method: 'GET',
+        url: 'https://api.api-ninjas.com/v1/quotes?category=' + category2,
+        headers: { 'X-Api-Key': 'zanloHQp53FvGJffeRPwng==0BaPHaRW4myCo1F3'},
+        contentType: 'application/json',
+        success: function(result) {
+            console.log(result);
+            $('#quote').text(result[0].quote + '  - ' + result[0].author);
+        },
+        error: function ajaxError(jqXHR) {
+            console.error('Error: ', jqXHR.responseText);
+        }
+    });
+    });
 
 // GET https://youtube.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&channelId=UC8TZwtZ17WKFJSmwTZQpBTA&maxResults=25&key=[YOUR_API_KEY] HTTP/1.1
 
