@@ -39,15 +39,20 @@ ytApiKey = 'AIzaSyAAf6fRHMjxIPj6MQ4fr2jDvzw-VDIUy3o'
 
 $.ajax({
     method: 'GET',
-    url: 'https://youtube.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&channelId=UC8TZwtZ17WKFJSmwTZQpBTA&maxResults=25&key=' + ytApiKey,
+    url: 'https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLU6EQu9809AJYvaOtXnB61QoYrUshDw-F&key=' + ytApiKey,
     contentType: 'application/json',
-    success: function(result) {
-        console.log(result);
+    success: function(result) { 
+        console.log(result);        
     },
     error: function ajaxError(jqXHR) {
         console.error('Error: ', jqXHR.responseText);
     }
 });
+// 
+// we want to store the category of the quote submitted to local store
+// then in a seperate function get the category happiness or angry
+// assign each category with its respective result number
+// append results to page 
 
 //   function loadClient() {
 //     gapi.client.setApiKey("AIzaSyAAf6fRHMjxIPj6MQ4fr2jDvzw-VDIUy3o");
