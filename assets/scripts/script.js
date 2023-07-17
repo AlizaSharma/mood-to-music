@@ -76,6 +76,11 @@ $.ajax({
 //               function(err) { console.error("Execute error", err); });
 //   }
 
-$('button').click(function(){
+$("#submit").click(function(){
+    window.location.href='results.html';
+    return false;
+ });
+
+$('#back').click(function(){
     window.location.href='index.html';
- })
+ });
