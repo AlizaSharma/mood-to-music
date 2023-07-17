@@ -70,3 +70,7 @@ $.ajax({
 //               },
 //               function(err) { console.error("Execute error", err); });
 //   }
+
+$('button').click(function(){
+    window.location.href='index.html';
+ })
