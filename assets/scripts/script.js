@@ -1,3 +1,4 @@
+var quoteCat;
 $(function quotes() {
     var category = 'happiness'
     var category2 = 'anger'
@@ -9,6 +10,7 @@ $(function quotes() {
         success: function(result) {
             console.log(result[0].quote);
             $('#quote').text(result[0].quote + '  - ' + result[0].author);
+            localStorage.setItem("quoteCat", JSON.stringify(result[0].category));
         },
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);
@@ -42,7 +44,18 @@ $.ajax({
     url: 'https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLU6EQu9809AJYvaOtXnB61QoYrUshDw-F&key=' + ytApiKey,
     contentType: 'application/json',
     success: function(result) { 
-        console.log(result);        
+        console.log(result.items[0].snippet.resourceId.videoId);
+        var happy = result.items[0].snippet.resourceId.videoId
+        var anger = result.items[1].snippet.resourceId.videoId
+       var quoteCat = localStorage.getItem("quoteCat");
+       console.log(quoteCat);
+       if (quoteCat === "happiness") {
+        $('#ytVid').attr("src", "https://youtube.com/embed/" + happy);
+       }
+       else{
+        $('#ytVid').attr("src", "https://youtube.com/embed/" + anger)
+       }
+    
     },
     error: function ajaxError(jqXHR) {
         console.error('Error: ', jqXHR.responseText);
