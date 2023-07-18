@@ -12,7 +12,7 @@
     <header class="hero is-small is-link"> 
         <div class="hero-body has-text-centered">
             <p class="title">Mood To Music</p>
-            <p class="subtitle">Select a quote that fits your current mood</p>
+            <p class="subtitle">Select a quote that fits your current mood to get your curated playlist</p>
         </div>
     </header>
     
@@ -23,6 +23,31 @@
       </div>
     </section>
 
+    <div class="container has-text-centered">
+      <div class="field is-grouped">
+        <p class="control">
+          <button id="submit" class="button is-link">
+            <span class="icon-text">
+              <span class="icon">
+                 <i class="fa-solid fa-heart" style="color: #fcfcfc;"></i></i>
+              </span>
+              <span>I Like This Quote</span>
+            </span>
+          </button>
+        </p>
+        <p class="control">
+          <button id="refresh" class="button is-danger">
+            <span class="icon-text">
+              <span class="icon">
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </span>
+              <span>Give Me A New Quote</span>
+            </span>
+          </button>
+        </p>
+      </div>
+    </div>
+
     <div id= "image-box" class="container has-text-centered">
       <figure class="image is-200x200">
         <img src="./assets/music-notes.jpeg">
@@ -31,20 +56,6 @@
 
 </body>
 
-<div class="container has-text-centered">
-  <div class="field is-grouped">
-    <p class="control">
-      <button id="submit" class="button is-link">
-        Submit
-      </button>
-    </p>
-    <p class="control">
-      <button id="refresh" class="button is-link">
-        Refresh
-      </button>
-    </p>
-  </div>
-</div>
       
 <footer class="footer">
     <div class="content has-text-centered">
