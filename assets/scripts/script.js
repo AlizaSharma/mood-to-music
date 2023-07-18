@@ -1,5 +1,5 @@
 var quoteCat;
-$(document).ready(function quotes() {
+function quotes() {
     var categories = ["happiness", "anger"];
     var mood = Math.floor(Math.random() * categories.length)
     $.ajax({
@@ -10,9 +10,11 @@ $(document).ready(function quotes() {
         success: function(result) {
             console.log(result[0].category);
             $('#quote').text(result[0].quote + '  - ' + result[0].author);
-          var setQuote =  JSON.stringify(result[0].category);
-          console.log(setQuote);
-          ytConnect(setQuote);
+          localStorage.setItem("testQuote", result[0].category);
+          let testQuote = localStorage.getItem("testQuote");
+          console.log(testQuote);
+          ytConnect(testQuote);
+          console.log(typeof result[0].category)
         },
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);
@@ -20,7 +22,8 @@ $(document).ready(function quotes() {
         }
     });
     
-    });
+    };
+    quotes();
 // instanciating the function to then call the function 
 // in the call have the argument 
 // have that argument instanciation
@@ -36,16 +39,18 @@ $.ajax({
         console.log(result.items[1].snippet.resourceId.videoId);
         var happy = result.items[0].snippet.resourceId.videoId;
         var anger = result.items[1].snippet.resourceId.videoId;
-
+        console.log(mood)
+        console.log(typeof mood)
+        console.log(mood === "happiness");
        if (mood === "happiness") {
        var happyUrl = $('#ytVid').attr("src", "https://youtube.com/embed/" + happy);
-       console.log(happyUrl)
+       console.log(happyUrl);
        }
        else{
         var angerUrl = $('#ytVid').attr("src", "https://youtube.com/embed/" + anger);
         console.log(angerUrl);
        }
-       console.log(quoteCat);
+       ;
 
     
     },
