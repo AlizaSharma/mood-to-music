@@ -14,7 +14,7 @@ The Mood to Music webpage can be found via Git Hub [URL](https://alizasharma.git
 
 See example below of expected outcome:
 
-![Mood to Music]()
+![Mood to Music](./assets/2023-07-17%2021.48.07%20(2).gif)
 
 ## User Story 
 AS A USER who wants to discover new music I WANT to gauge my mood based on quotes SO THAT I CAN derive a genre of music I would likely enjoy. 
