@@ -73,7 +73,7 @@ $("#submit").click(function () {
     $('#refresh').attr("style", "display: none");
     $('#back-btn').attr("style", "display: flex");
     $('#image-box').attr("style", "display: none");
-    $('#header-subtitle').text("🎶Enjoy Your Playlist!🎶");
+    $('#header-subtitle').html('<a href="https://www.youtube.com/watch?v=BBJa32lCaaY">🎶Enjoy Your Playlist!🎶</a>');
 });
 // event listener on the back button to refresh the page with the starting HTML
 $('#back').click(function () {
