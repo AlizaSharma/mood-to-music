@@ -7,14 +7,10 @@
     justify-content: center;
   }
 
-  .button {
-    text-align: center;
-    justify-content: center;
-    background-color: whitesmoke;
-    padding: 12px 16px;
-}
-
 #results {
   display: none;
 }
 
+#back-btn {
+  display: none;
+}
