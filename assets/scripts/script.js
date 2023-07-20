@@ -1,7 +1,7 @@
 // function to get a random quote from the QuoteNinjas API.
 function quotes() {
     // putting the categories into an option and then running math random to pick a random category
-    var categories = ["happiness", "anger", "dreams", "intelligence", "love"];
+    var categories = ["happiness", "anger", "dreams", "intelligence", "love", "cool"];
     var mood = Math.floor(Math.random() * categories.length);
     $.ajax({
         method: 'GET',
@@ -30,7 +30,7 @@ function ytConnect(mood) {
     ytApiKey = 'AIzaSyAAf6fRHMjxIPj6MQ4fr2jDvzw-VDIUy3o'
     $.ajax({
         method: 'GET',
-        url: 'https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLU6EQu9809AJYvaOtXnB61QoYrUshDw-F&key=' + ytApiKey,
+        url: 'https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=PLU6EQu9809AJYvaOtXnB61QoYrUshDw-F&key=' + ytApiKey,
         contentType: 'application/json',
         success: function (result) {
             // setting variables for the different moods that will connect to the proper YouTube VideoId in the playlist created.
@@ -39,6 +39,7 @@ function ytConnect(mood) {
             var dreamy = result.items[2].snippet.resourceId.videoId;
             var intelligent = result.items[3].snippet.resourceId.videoId;
             var love = result.items[4].snippet.resourceId.videoId;
+            var cool = result.items[5].snippet.resourceId.videoId;
             //if else expressions to check for the right mood to then dynamically insert it into the HTML
             if (mood === "happiness") {
                 $('#ytVid').attr("src", "https://youtube.com/embed/" + happy);
@@ -51,6 +52,9 @@ function ytConnect(mood) {
             }
             else if (mood === "love") {
                 $('#ytVid').attr('src', "https://youtube.com/embed/" + love);
+            }
+            else if (mood === "cool") {
+                $('#ytVid').attr('src', "https://youtube.com/embed/" + cool);
             }
             else {
                 $('#ytVid').attr("src", "https://youtube.com/embed/" + anger);
